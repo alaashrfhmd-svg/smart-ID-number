@@ -1,0 +1,84 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    long long n;
+    cout<< "please enter your ID : ";
+    cin>>n;
+    int count=0;
+    int digit=0;
+    while(n!=0){
+        digit=n%10;
+        n=n/10;
+        count++;
+    }
+    if(count<14){
+        cout<<"please re-enter until valid ID number" <<endl ;
+    }
+else if(count ==14){
+cout<<"status  :Valid" <<endl;}
+else{
+cout<<"please re-enter until valid ID number" <<endl ;
+}
+    
+int birday=0;
+for(int i=1; i<=7;i++){
+    birday=n%10;
+    n=n/10;
+}
+birday=0;
+birday=n%100;
+n=n/100;
+int birmon=0;
+birmon=n%100;
+n=n/100;
+int biryear =0;
+int year=0;
+biryear=n%100;
+n=n/100;
+if(n==3){
+  year=2000+biryear;  
+}
+else if(n==2){
+    year=1900+biryear;
+}
+    int age=2026-year;
+    
+cout<<"Birth Date:"<<year <<"/" <<birmon <<"/" <<birday <<endl;
+cout<<"Age  :"<<age <<endl ; 
+
+long long Gend=0;
+for(int i=1;i<=2;i++){
+    Gend=n%10;
+    n=n/10;
+}
+if(Gend%2==0){
+    cout<<"Female"<<endl;
+}
+else{
+    cout<<"Male"<<endl;
+}
+int c=0;
+string GO[36]={"0","cairo","Alexandria","port said","suez","m","n","b","v","c","x","Damietta","Daqahliya","Eastern","Qalyubia","Kafr El Sheikh","Western","Menoufia","Beheira","Ismailia","m","Giza","Beni Suef","Fayyoum","Minya","Assiut","Sohag","Qena","Aswan","Luxor","o","Red Sea","New Valley","Matrouh","North Sinai","South Sinai"};
+for(int i=1;i<=5;i++){
+    c=n%10;
+    n=n/10;
+}
+c=n%100;
+if(c>=1 && c<=36){
+    cout<<GO[c];
+}
+
+else{
+    cout<<"Outside the Republic";
+}
+
+  return 0;
+}
+
+
+
+
+
+
+
